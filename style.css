@@ -1,0 +1,375 @@
+/*style*/
+/*..,.t */
+/* DEFINING THE IMAGE PROPERTIES */
+img {
+    float:left;
+    padding:0.5%;
+    width:25vw;
+    height:auto;
+    transition: 0.8s;
+}
+img:hover{   
+    filter:drop-shadow(1px 5px 15px black);
+}
+
+/* FORMATTING FOR THE WHOLE BODY */
+body {
+    margin: 0;
+    padding-left:6rem;
+    font-family: "Libre franklin",sans-serif;
+}
+ 
+/* DEFINING 1ST GRID */
+.container1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:0.1fr 1fr 0.1fr 0.2fr;
+    grid-template-areas:
+      "name name name main main main "
+      "sidebar sidebar sidebar main main main "
+      "h1 h1 h1 h1 h1 h1"
+      "c c c c c c ";
+    grid-gap: 0.5rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size:0.8vw;
+    text-align: center;  
+    line-height:2vw ;
+    word-spacing: 2vw;
+}
+
+/* DEFINING 2ND GRID */
+.container2 {
+    display: grid;
+    grid-template-columns:10vw 10vw 10vw ;
+    top:70vh;
+    grid-template-rows: 1fr;
+    grid-template-areas: "gallery1 gallery2 gallery3";
+    grid-gap: 16vw;
+    position: absolute;
+    padding-top: 20%;
+    z-index: 100;
+}
+
+/* NAME AREA */
+#name {
+    grid-area: name;
+    padding-top: 3.5vh;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    font-size:1.5vw;
+}
+
+/* FORMATTING FOR OPTION BUTTON */
+.option{
+    font-weight: bold;
+    margin-right:1rem;
+    display:none;
+    color: #000000;
+}
+ 
+/* MAIN AREA */
+main {
+    background-image: url(image.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    position: absolute;
+    height:70rem;
+    width:auto;
+    right: 0;
+    margin: 0px;
+    grid-area: main;
+}
+
+/* SIDE AREA */
+#sidebar {
+    grid-area: sidebar;
+    text-transform: none;
+    color: black;
+    word-spacing: 5px;
+    text-align: left;
+    font-size:1.5vw;
+    padding-top: 20%;
+    padding-right: 30%;
+    margin-right:8vw;
+}
+
+/* Lorem ipsum in the sidebar */
+#h {
+    font-weight: bold;
+    color: black;
+    font-size:3vw;
+    text-transform: none;
+    word-spacing:10px;
+    padding-bottom: 5vh;
+}
+#p1{
+    font-size: 0px;
+}
+/* VIEW MORE BUTTON */
+.btn3{
+    border: 1px solid #000000;
+    background: rgb(49, 48, 48);
+    padding: 3% 10%;
+    font-size: 70%;
+    cursor: pointer;
+    margin: 1vh;
+    margin-top: 2vh;
+    transition: 0.8s;
+    color: #fff;
+}
+.btn3:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+}
+
+/* Lorem ipsum below the main area */
+#h1 {
+    font-weight: bold;
+    grid-area:h1;
+    color: black;
+    font-size:3.5vw;
+    text-transform: none;
+    margin-top: 5vh;
+    word-spacing:10px;
+    padding-top:30vh;
+}
+
+/* Content below the main area */
+#c {
+    grid-area:c;
+    padding-top:1vh;
+    padding-left: 30%;
+    padding-right: 30%;
+    color: black;
+    font-size:1.5vw;
+    text-transform: none;
+    word-spacing:5px;
+}
+#p2{
+    font-size: 0px;
+}
+
+/* IMAGE GALLERY FOR CONTAINER 2 */
+.gallery1{
+    grid-area: gallery1;
+    display: flex;
+    flex-direction: column;
+    text-transform: none;
+    z-index:95;
+    position:absolute;
+}
+.gallery2{
+    grid-area:gallery2;
+    display: flex;
+    flex-direction: column;
+    text-transform: none;
+    z-index:95;
+    position:absolute;
+}
+.gallery3{
+    grid-area: gallery3;
+    display: flex;
+    flex-direction: column;
+    text-transform: none;
+    z-index:95;
+    position:absolute;
+}
+/* CONTENT BUTTONS */
+.btn1{
+    cursor: pointer;
+    transition: 0.8s;
+    border: none;
+    color: black;
+    background-color:#a1a1a1 ;
+    font-size: 2vh;
+    font-weight: bold;
+    width:12vw;
+    height: 4vh;
+    text-align: center;
+    margin-top:-1.5vh;
+    margin-left:6.5vw;
+    margin-bottom: 5vw;
+    z-index:97;
+    position:relative;   
+}
+.btn1:hover{
+    background-color: rgba(36, 123, 157, 0.916);
+    color: black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+}
+  
+@media only screen and (max-width:840px) {
+
+    /* REFORMATTING THE BODY */
+    body {
+        margin:1rem; 
+        margin-right:0px;
+        padding-right: 0px;
+        padding:1%;
+    }
+
+    /* NAME AREA */
+    #name {
+        text-align:left;
+        padding-top: 2rem;
+        padding-left: 0.5rem;
+        font-size:2rem;
+        font-weight: bold;
+    }
+
+    /* REFORMATTING 1STGRID */
+    .container1 {
+      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-rows:0.2fr 2fr 0.6fr 0.8fr;
+      grid-template-areas:
+        "name main"
+        "sidebar main"
+        "h1 h1"
+        "c c";
+    }
+    /* REFORMATTING 2ND GRID */
+    .container2 {
+        float: left;
+        display: grid;
+        padding-left:10vw;
+        padding-right:10vw;
+        padding-bottom:15rem;
+        padding-top:5.5rem;
+        grid-template-columns:1fr ;
+        position:relative;
+        top:-30vh;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+        "gallery1 "
+        "gallery2"
+        "gallery3";
+        grid-gap:115vw;
+    }
+
+    /* MAIN AREA */
+     main {
+        /* background-size:100%;  */
+        height:0rem;
+        background-position:bottom;
+        background-image: url(img2.jpg);
+        position:relative;
+        padding-top:49rem;
+    }
+    ul{ 
+       margin-top: -48rem;
+    }  
+    li a{
+        margin:0px;
+        color: rgb(83, 83, 83);
+        font-size:1.5rem;
+        text-align: right;
+        width:30vw;
+        line-height:2rem;
+    }
+    /* OPTION BUTTON AND IT'S HOVERABLE DROPDOWN */
+    .option{
+        background-color: white;
+        transition: 0.8s;
+        color:#000000;
+        border: none;
+        text-align:right;
+        float: right;
+        font-size:2rem;
+        display: block;
+        padding-right:1rem;
+        width: auto;
+    }
+     .dropdown{
+        display: none;
+        position:relative;
+        z-index: 1;;
+    } 
+    .dropdown li a{
+        transition: 0.5s;
+        color: #000000;
+        display: block;
+    }
+    .dropdown li a:hover{
+        text-decoration: underline solid;
+        background-color:rgba(94, 91, 98, 0);
+    }
+    .icon:hover .dropdown{
+        display: block;
+    }
+    .icon:hover .option{
+        cursor: pointer;
+        background-color: rgba(34, 35, 35, 0.307);
+    } 
+    .other{
+        display:none;
+    }
+   
+    /* SIDEBAR */
+    #sidebar {
+        
+        word-spacing:0.5rem;
+        text-align: left;
+        font-size:0.9rem;
+        padding-top:27rem;
+        padding-right: 0rem;
+        line-height:1.1rem ;  
+        margin-right: 0rem;
+    }
+    #h {
+        font-size:0vw;
+    }
+    #p1{
+        font-size:0.9rem;
+    }
+    /* VIEW MORE BUTTON */
+    .btn3{
+        padding: 10%;
+        padding-top:5%;
+        padding-bottom:5%;
+        font-size:0.6rem;
+        letter-spacing:0.2vw;
+        margin-left: 0%;
+        margin-top:20%;
+        color: #cec7c7;
+    }
+
+    /* Lorem ipsum below the main area */
+    #h1 {
+        padding-top:4.5rem;
+        font-size:2.5rem;   
+    }
+   /* Content below the main area */
+    #c {
+        padding-left:1rem;
+        padding-right:1rem;
+        padding-top:0rem;
+        font-size:0.8rem;
+        word-spacing:0.5rem;
+        line-height:1rem ;
+    }
+    #p2{
+        padding-left:1rem;
+        padding-right:1rem;
+        padding-top:0.2rem;
+        word-spacing:0.5rem;
+        font-size:0.77rem;
+    }
+
+    /* CONTENT BUTTON */
+    .btn1{
+        font-size:1.5rem;
+        font-weight: bold;
+        width:50vw;
+        height:3rem;
+        margin-left: 10vw;
+        margin-top: 1vw;
+    }
+    /* REFORMATTING THE IMAGE */
+    img{
+        width:70vw;    
+    }
+  }
